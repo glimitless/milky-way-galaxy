@@ -1,0 +1,167 @@
+
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin:0;
+    background-color: black;
+}
+canvas{
+    width: 100%;
+    height: 100%;
+}
+h1{
+    line-height: 0.75em;
+    font-size: 10rem;
+    color: white;
+}
+p{
+    font-size: 1.5em;
+    line-height: 1.75rem;
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+}
+a{
+    font-size: 2em;
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+}
+
+
+
+#introText {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    opacity: 0.6;
+}
+#planet-overlay-header{
+    align-items:center;
+}
+#planet-info-overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Fixed width */
+    height: 60%; /* Fixed height */
+    background: rgba(20, 26.7, 51.4, 0.6);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: none; /* Hidden by default */
+    overflow: auto; /* Adds scrollbars if content overflows */
+    
+}
+#planet-links {
+    display: flex; /* Aligns children (links) in a row */
+    width: 100%; /* Ensures the container takes up the full width */
+    justify-content: flex-start; /* Aligns children at the start of the container */
+}
+
+
+
+.wlcmH1{
+    /* font-family: cursive; */
+    font-weight: normal;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+    user-select: none;
+    animation-name: welcomeText;
+    animation-duration: 4s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+.p1{
+    color: white;
+    opacity: 0;
+    animation-name: secondaryText;
+    animation-duration: 4s;
+    animation-delay: 7s;
+    animation-fill-mode: forwards;
+}
+.planetName{
+    top: 1.3vw;
+    left: 1vw;
+    position: absolute;
+    font-size: 5rem;
+    font-weight:normal;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+    font-size: 6rem;
+}
+.planetInformation{
+    font-size: 1.5em;
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    position: fixed;
+    top: 50%;
+    left: 30%;
+    font-size: 1.5rem;
+    width: 40%;
+    text-align: center;
+}
+.planet-info-links {
+    flex-grow: 1; /* Allows the link to grow and fill the available space */
+    padding: 1.8%; /* Adds some space inside each box */
+    background-color: rgba(0, 123, 255, 0.3); /* Adjusted background color with opacity */
+    color: white; /* Text color */
+    text-align: center; /* Centers the text inside the box */
+    text-decoration: none; /* Removes underline from links */
+    box-sizing: border-box; /* Ensures padding is included in the element's total width */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    margin: 0; /* Removes any default margin */
+    font-size: 2rem;
+    margin-top: 10%;
+}
+.planet-info-links:hover {
+    background-color: #0056b3; /* Darker shade when hovered */
+}
+.hidden {
+    display: none;
+}
+.closeButton {
+    position: absolute;
+    background-color: rgba(0, 0, 255, 0);
+    color: #FFFFFF;
+    font-size: 5em;
+    border: none;
+    cursor: pointer;
+    align-content: right;
+    top: 1%;
+    right: 1vw;
+    opacity: 1;
+}
+.closeButton:hover{
+    color: red;
+}
+
+
+
+
+@keyframes welcomeText{
+    0% {font-size: 10rem; }
+    100%{font-size: 5rem; animation-timing-function: ease-out; }
+}
+@keyframes secondaryText{
+    0%{opcaity: 0;}
+    100%{opacity: 1;}
+}
+@media(max-width: 800px){
+    wlcmH1{
+        font-size: 5rem;
+    }
+}
+@media(min-width: 801px){
+    wlcmH1{
+        font-size: 10rem;
+    }
+}
